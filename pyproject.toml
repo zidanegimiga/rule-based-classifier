@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "survey-classifier"
+version = "0.1.0"
+description = "Rule-based module tagging for survey questions"
+readme = "README.md"
+authors = [{ name = "Zidane Gimiga" }]
+license = "MIT"
+dependencies = [
+    "nltk",
+    "typer",
+    "pymongo"
+]
+
+[project.scripts]
+survey-classifier = "survey_classifier.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
