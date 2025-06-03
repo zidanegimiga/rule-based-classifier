@@ -3,16 +3,19 @@ name = "survey-classifier"
 version = "0.1.0"
 description = "CLI tool to classify survey questions"
 authors = [{ name = "Zidane Gimiga", email = "hellozidanegimiga@gmail.com" }]
+requires-python = ">=3.10"
+
 dependencies = [
     "typer[all]",
     "pymongo",
     "nltk"
 ]
-requires-python = ">=3.10"
 
 [project.scripts]
-survey-classifier = "survey_classifier.cli:app"
+survey-classifier = "survey_classifier.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["survey_classifier*"]

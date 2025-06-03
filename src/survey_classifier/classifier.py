@@ -1,8 +1,10 @@
 from .keywords_config import MODULE_KEYWORDS
 from .utils import preprocess
 
+
 def classify_question(text: str):
     tokens = preprocess(text)
+    print(f"Tokens: {tokens}")
     matched_modules = []
 
     for module, keywords in MODULE_KEYWORDS.items():
@@ -10,6 +12,7 @@ def classify_question(text: str):
             matched_modules.append(module)
 
     return matched_modules
+
 
 def classify_with_confidence(text: str):
     tokens = preprocess(text)
